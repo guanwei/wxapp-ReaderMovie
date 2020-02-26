@@ -1,0 +1,11 @@
+<import src="../movie/movie-template.wxml" />
+
+<template name="movieGridTemplate">
+  <!-- scroll-view有致命的缺陷，就是不支持flex/grid布局。
+但我们可以通过使用scroll-view来包裹view的方法来使用flex/grid布局 -->
+  <view class="grid-container">
+    <block wx:for="{{movies}}" wx:key="movie" wx:for-item="movie">
+      <template is="movieTemplate" data="{{...movie}}" />
+    </block>
+  </view>
+</template>

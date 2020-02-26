@@ -1,0 +1,17 @@
+<import src="post-item/post-item-template.wxml" />
+
+<view>
+  <swiper catchtap="onSwiperTap" vertical="{{false}}" indicator-dots="true" interval="5000" autoplay="true">
+    <block wx:for='{{swiperPostsList}}' wx:key="post" wx:for-item="post">
+      <swiper-item>
+        <image src="{{post.imgSrc}}" data-postId="{{post.postId}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <block wx:for="{{postsList}}" wx:key="post" wx:for-item="post">
+    <view catchtap="onPostTap" data-postId="{{post.postId}}">
+      <template is="postItem" data="{{...post}}" />
+    </view>
+  </block>
+</view>

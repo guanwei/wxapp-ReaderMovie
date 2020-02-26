@@ -1,0 +1,57 @@
+<!--pages/form/form.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <text class="page_title">form</text>
+    <text class="page_desc">表单</text>
+  </view>
+
+  <form class="page__bd" bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section section_gap">
+      <view class="section__title">switch</view>
+      <switch name="switch" checked="true" type="switch" color="yellow" bindchange="onBindChange" />
+    </view>
+
+    <view class="section section_gap">
+      <view class="section__title">slider</view>
+      <slider name="slider" min="0" max="500" step="50" value="0" show-value="true" />
+    </view>
+
+    <view class="section section_gap">
+      <view class="section__title">input</view>
+      <input name="input" placeholder="please input here" />
+    </view>
+
+    <view class="section section_gap">
+      <view class="section__title">职业：</view>
+      <radio-group name="career" bindchange="onRaidoChange">
+        <label>
+          <radio value="战士" checked="true" />战士</label>
+        <label>
+          <radio value="法师" />法师</label>
+        <label>
+          <radio value="牧师" />牧师</label>
+      </radio-group>
+    </view>
+
+    <view class="section section_gap">
+      <view class="section__title">最喜欢吃的菜：</view>
+      <checkbox-group name="mostLikeFood" bindchange="onCheckboxChange">
+        <label>
+          <checkbox value="椒盐排骨" />椒盐排骨</label>
+        <label>
+          <checkbox value="泡椒凤爪" />泡椒凤爪</label>
+        <label>
+          <checkbox value="四喜丸子" />四喜丸子</label>
+        <label>
+          <checkbox value="青椒脆骨" />青椒脆骨</label>
+        <label>
+          <checkbox value="莲藕排骨汤" />莲藕排骨汤</label>
+      </checkbox-group>
+    </view>
+
+    <view class="btn-area">
+      <button form-type="submit">Submit</button>
+      <button form-type="reset">Reset</button>
+    </view>
+  </form>
+</view>
